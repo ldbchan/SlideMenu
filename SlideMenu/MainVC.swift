@@ -19,7 +19,7 @@ class MainVC : UIViewController {
     
     @IBAction func menuButtonClicked(sender : AnyObject) {
         
-        var x = self.sidebarIsOpen! ? 0 : 274
+        let x = self.sidebarIsOpen! ? 0 : 274
         UIView.animateWithDuration(0.2, animations: {
             self.view.frame = CGRect(x:x, y:0, width:320, height:568)
             }, completion: { _ in
@@ -29,7 +29,7 @@ class MainVC : UIViewController {
     
     @IBAction func swipeHappend(recognizer : UISwipeGestureRecognizer) {
         
-        var x = (recognizer.direction == .Left) ? 0 : 274
+        let x = (recognizer.direction == .Left) ? 0 : 274
         UIView.animateWithDuration(0.2, animations: {
             self.view.frame = CGRect(x:x, y:0, width:320, height:568)
             }, completion: { _ in
