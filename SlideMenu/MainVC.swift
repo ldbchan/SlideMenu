@@ -17,23 +17,23 @@ class MainVC : UIViewController {
         sidebarIsOpen = false
     }
     
-    @IBAction func menuButtonClicked(sender : AnyObject) {
+    @IBAction func menuButtonClicked(_ sender : AnyObject) {
         
         let x = self.sidebarIsOpen! ? 0 : 274
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.view.frame = CGRect(x:x, y:0, width:320, height:568)
             }, completion: { _ in
                 self.sidebarIsOpen = !(self.sidebarIsOpen!)
             })
     }
     
-    @IBAction func swipeHappend(recognizer : UISwipeGestureRecognizer) {
+    @IBAction func swipeHappend(_ recognizer : UISwipeGestureRecognizer) {
         
-        let x = (recognizer.direction == .Left) ? 0 : 274
-        UIView.animateWithDuration(0.2, animations: {
+        let x = (recognizer.direction == .left) ? 0 : 274
+        UIView.animate(withDuration: 0.2, animations: {
             self.view.frame = CGRect(x:x, y:0, width:320, height:568)
             }, completion: { _ in
-                self.sidebarIsOpen = (recognizer.direction == .Left) ? false : true
+                self.sidebarIsOpen = (recognizer.direction == .left) ? false : true
             })
         
     }
